@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Tugas_Akhir_PBO.View
 {
-    public partial class UserControlDashboard : UserControl
+    public partial class UserControlTransaksi : UserControl
     {
         LandingPage FormParent;
-        UserControlLogin login;
-        public UserControlDashboard(LandingPage FormParent)
+        public UserControlTransaksi(LandingPage FormParent)
         {
             InitializeComponent();
             this.FormParent = FormParent;
+
         }
 
         private void btnPengelolaanStok_Click(object sender, EventArgs e)
@@ -30,14 +30,9 @@ namespace Tugas_Akhir_PBO.View
             FormParent.ShowKelolaProduk();
         }
 
-        private void btnTransaksi_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            FormParent.ShowTransaksi();
-        }
-
-        private void UserControlDashboard_Load(object sender, EventArgs e)
-        {
-
+            FormParent.ShowDashboard();
         }
 
         private void LogoutBox_Click(object sender, EventArgs e)
@@ -47,6 +42,11 @@ namespace Tugas_Akhir_PBO.View
             {
                 FormParent.ShowLogin();
             }
+        }
+
+        private void UserControlTransakasi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

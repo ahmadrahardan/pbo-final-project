@@ -50,6 +50,7 @@
             LogoutBox.Size = new Size(183, 55);
             LogoutBox.TabIndex = 0;
             LogoutBox.TabStop = false;
+            LogoutBox.Click += LogoutBox_Click;
             // 
             // DashboardBox
             // 
@@ -70,6 +71,7 @@
             StokBox.Size = new Size(340, 57);
             StokBox.TabIndex = 2;
             StokBox.TabStop = false;
+            StokBox.Click += btnPengelolaanStok_Click;
             // 
             // KatalogBox
             // 
@@ -90,6 +92,7 @@
             TransaksiBox.Size = new Size(340, 57);
             TransaksiBox.TabIndex = 4;
             TransaksiBox.TabStop = false;
+            TransaksiBox.Click += btnTransaksi_Click;
             // 
             // UserControlDashboard
             // 

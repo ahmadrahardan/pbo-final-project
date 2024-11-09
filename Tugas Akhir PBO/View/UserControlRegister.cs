@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tugas_Akhir_PBO.Models;
+using Tugas_Akhir_PBO.App.Models;
+using Tugas_Akhir_PBO.App.Context;
 
 namespace Tugas_Akhir_PBO.View
 {
@@ -47,8 +48,14 @@ namespace Tugas_Akhir_PBO.View
                 return;
             }
 
+            Register register = new Register(
+                UsernameBox.Text,
+                EmailBox.Text,
+                PasswordBox.Text
+            );
+
             RegisterContext registerContext = new RegisterContext();
-            bool isRegistered = registerContext.Register(UsernameBox.Text, EmailBox.Text, PasswordBox.Text);
+            bool isRegistered = registerContext.Register(register);
 
             if (isRegistered)
             {

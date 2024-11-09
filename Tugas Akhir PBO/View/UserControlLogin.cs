@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tugas_Akhir_PBO.Models;
+using Tugas_Akhir_PBO.App.Models;
+using Tugas_Akhir_PBO.App.Context;
 
 namespace Tugas_Akhir_PBO.View
 {
@@ -27,8 +28,8 @@ namespace Tugas_Akhir_PBO.View
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            LoginAdminContext loginAdminContext = new LoginAdminContext();
-            LoginAdmin login = loginAdminContext.Validate(EmailBox.Text, PasswordBox.Text);
+            LoginContext loginAdminContext = new LoginContext();
+            Login login = loginAdminContext.Validate(EmailBox.Text, PasswordBox.Text);
 
             if (login != null)
             {
@@ -38,11 +39,11 @@ namespace Tugas_Akhir_PBO.View
             }
             else if (string.IsNullOrEmpty(EmailBox.Text) || string.IsNullOrEmpty(PasswordBox.Text))
             {
-                MessageBox.Show("Username & Password tidak boleh kosong!", "FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email & Password tidak boleh kosong!", "FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Username atau Password salah. Masukkan dengan benar!", "LOGIN FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email atau Password salah. Masukkan dengan benar!", "LOGIN FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

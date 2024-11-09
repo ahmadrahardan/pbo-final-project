@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace Tugas_Akhir_PBO.View
 {
-    public partial class UserControlDashboard : UserControl
+    public partial class UserControlStok : UserControl
     {
         LandingPage FormParent;
-        UserControlLogin login;
-        public UserControlDashboard(LandingPage FormParent)
+        public UserControlStok(LandingPage FormParent)
         {
             InitializeComponent();
             this.FormParent = FormParent;
         }
 
-        private void btnPengelolaanStok_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            FormParent.ShowKelolaStok();
+            FormParent.ShowDashboard();
         }
 
         private void btnPengelolaanProduk_Click(object sender, EventArgs e)
@@ -35,11 +34,6 @@ namespace Tugas_Akhir_PBO.View
             FormParent.ShowTransaksi();
         }
 
-        private void UserControlDashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LogoutBox_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -47,6 +41,11 @@ namespace Tugas_Akhir_PBO.View
             {
                 FormParent.ShowLogin();
             }
+        }
+
+        private void UserControlStok_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

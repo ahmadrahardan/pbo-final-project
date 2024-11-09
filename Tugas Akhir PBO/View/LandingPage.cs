@@ -16,9 +16,9 @@ namespace Tugas_Akhir_PBO.View
         UserControlLogin login;
         UserControlRegister register;
         UserControlDashboard dashboard;
-        //UserControlPengelolaanStok pengelolaanStok;
-        //UserControlPengelolaanProduk pengelolaanProduk;
-        //UserControlTransaksi transaksi;
+        UserControlStok pengelolaanStok;
+        UserControlKatalog pengelolaanProduk;
+        UserControlTransaksi transaksi;
         System.Windows.Forms.Timer timer;
         public LandingPage()
         {
@@ -27,17 +27,17 @@ namespace Tugas_Akhir_PBO.View
             login = new UserControlLogin(this);
             register = new UserControlRegister(this);
             dashboard = new UserControlDashboard(this);
-            //pengelolaanStok = new UserControlPengelolaanStok(this);
-            //pengelolaanProduk = new UserControlPengelolaanProduk(this);
-            //transaksi = new UserControlTransaksi(this);
+            pengelolaanStok = new UserControlStok(this);
+            pengelolaanProduk = new UserControlKatalog(this);
+            transaksi = new UserControlTransaksi(this);
 
             this.Controls.Add(splashScreen);
             this.Controls.Add(login);
             this.Controls.Add(register);
             this.Controls.Add(dashboard);
-            //this.Controls.Add(pengelolaanStok);
-            //this.Controls.Add(pengelolaanProduk);
-            //this.Controls.Add(transaksi);
+            this.Controls.Add(pengelolaanStok);
+            this.Controls.Add(pengelolaanProduk);
+            this.Controls.Add(transaksi);
 
             HideAllUserControl();
             ShowSplashScreen();
@@ -87,23 +87,23 @@ namespace Tugas_Akhir_PBO.View
             dashboard.Visible = true;
         }
 
-        //public void ShowKelolaStok()
-        //{
-        //    HideAllUserControl();
-        //    pengelolaanStok.Visible = true;
-        //}
+        public void ShowKelolaStok()
+        {
+            HideAllUserControl();
+            pengelolaanStok.Visible = true;
+        }
 
-        //public void ShowKelolaProduk()
-        //{
-        //    HideAllUserControl();
-        //    pengelolaanProduk.Visible = true;
-        //}
+        public void ShowKelolaProduk()
+        {
+            HideAllUserControl();
+            pengelolaanProduk.Visible = true;
+        }
 
-        //public void ShowTransaksi()
-        //{
-        //    HideAllUserControl();
-        //    transaksi.Visible = true;
-        //}
+        public void ShowTransaksi()
+        {
+            HideAllUserControl();
+            transaksi.Visible = true;
+        }
 
         private void LandingPage_Load(object sender, EventArgs e)
         {

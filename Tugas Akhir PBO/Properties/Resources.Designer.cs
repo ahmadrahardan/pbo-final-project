@@ -63,6 +63,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_DB_Idle {
+            get {
+                object obj = ResourceManager.GetObject("Button_DB_Idle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_DB_OnClick {
             get {
                 object obj = ResourceManager.GetObject("Button_DB_OnClick", resourceCulture);
@@ -76,6 +86,16 @@ namespace Tugas_Akhir_PBO.Properties {
         internal static System.Drawing.Bitmap Button_KT_Idle {
             get {
                 object obj = ResourceManager.GetObject("Button_KT_Idle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Button_KT_OnClick {
+            get {
+                object obj = ResourceManager.GetObject("Button_KT_OnClick", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +123,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_ST_OnClick {
+            get {
+                object obj = ResourceManager.GetObject("Button_ST_OnClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_TR_Idle {
             get {
                 object obj = ResourceManager.GetObject("Button_TR_Idle", resourceCulture);
@@ -113,9 +143,29 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_TR_OnClick {
+            get {
+                object obj = ResourceManager.GetObject("Button_TR_OnClick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dashboard {
             get {
                 object obj = ResourceManager.GetObject("Dashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Katalog_No_Panel {
+            get {
+                object obj = ResourceManager.GetObject("Katalog No Panel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +246,26 @@ namespace Tugas_Akhir_PBO.Properties {
         internal static System.Drawing.Bitmap top_view_photography_accesories_with_copy_space {
             get {
                 object obj = ResourceManager.GetObject("top-view-photography-accesories-with-copy-space", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transaksi_No_Panel {
+            get {
+                object obj = ResourceManager.GetObject("Transaksi No Panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transaksi_No_Panel1 {
+            get {
+                object obj = ResourceManager.GetObject("Transaksi No Panel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
