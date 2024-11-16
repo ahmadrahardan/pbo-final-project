@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tugas_Akhir_PBO.App.Core;
-using Tugas_Akhir_PBO.App.Models;
+using Tugas_Akhir_PBO.App.Models.Admin;
 
-namespace Tugas_Akhir_PBO.App.Context
+namespace Tugas_Akhir_PBO.App.Context.Admin
 {
-    internal class RegisterContext
+    internal class RegisterContext : Database
     {
         public bool Register(Register register)
         {
@@ -23,8 +23,8 @@ namespace Tugas_Akhir_PBO.App.Context
 
             try
             {
-                Database.commandExecutor(query, parameters);
-                return true; 
+                commandExecutor(query, parameters);
+                return true;
             }
             catch (NpgsqlException npgsqlEx)
             {

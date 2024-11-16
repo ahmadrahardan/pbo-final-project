@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tugas_Akhir_PBO.App.Core;
-using Tugas_Akhir_PBO.App.Models;
+using Tugas_Akhir_PBO.App.Models.Admin;
 
-namespace Tugas_Akhir_PBO.App.Context
+namespace Tugas_Akhir_PBO.App.Context.Admin
 {
-    internal class LoginContext
+    internal class LoginContext : Database
     {
         public Login Validate(string email, string password)
         {
@@ -22,7 +22,7 @@ namespace Tugas_Akhir_PBO.App.Context
                 new NpgsqlParameter("@password", password)
             };
 
-            DataTable resultTable = Database.queryExecutor(query, parameters);
+            DataTable resultTable = queryExecutor(query, parameters);
 
             if (resultTable.Rows.Count > 0)
             {

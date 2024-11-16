@@ -33,12 +33,13 @@
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
-            panel1 = new Panel();
+            pictureBox6 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -95,20 +96,23 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += btnPengelolaanStok_Click;
             // 
-            // panel1
+            // pictureBox6
             // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Location = new Point(485, 280);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1340, 720);
-            panel1.TabIndex = 5;
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = Properties.Resources.Gambaran_Transaksi_with_Panel;
+            pictureBox6.Location = new Point(1379, 86);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(477, 52);
+            pictureBox6.TabIndex = 5;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += btnAddProduk_Click;
             // 
             // UserControlKatalog
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Katalog_No_Panel;
-            Controls.Add(panel1);
+            Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -122,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -132,6 +137,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
-        private Panel panel1;
+        private PictureBox pictureBox6;
     }
 }

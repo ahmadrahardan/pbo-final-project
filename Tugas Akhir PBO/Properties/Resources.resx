@@ -121,14 +121,11 @@
   <data name="Button_ST_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_ST_Idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Button_UploadGambar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_UploadGambar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Transaksi No Panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi No Panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SignUpButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SignUpButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button_TR_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_TR_Idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,6 +135,9 @@
   </data>
   <data name="Button_KT_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_KT_Idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Form_TambahBarang_withBingkai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Form_TambahBarang_withBingkai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pannel Regist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pannel Regist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,20 +151,35 @@
   <data name="Transaksi No Panel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transaksi No Panel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="top-view-photography-accesories-with-copy-space" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\top-view-photography-accesories-with-copy-space.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_TR_OnClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_TR_OnClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Landing Page Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Landing Page Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="top-view-photography-accesories-with-copy-space" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\top-view-photography-accesories-with-copy-space.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Panel Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Panel Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhatsApp Image 2024-10-09 at 12.28.57_65388105" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhatsApp Image 2024-10-09 at 12.28.57_65388105.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gambaran_Transaksi with Panel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gambaran_Transaksi with Panel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_KT_OnClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_KT_OnClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Panel Login Baru" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Panel Login Baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Button_KT_OnClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_KT_OnClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SignUpButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignUpButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Button_Logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +193,7 @@
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Button_TR_OnClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_TR_OnClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Buttton_Selesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Buttton_Selesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

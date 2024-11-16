@@ -5,17 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Tugas_Akhir_PBO.App.Context;
 
-namespace Tugas_Akhir_PBO.App.Models
+namespace Tugas_Akhir_PBO.App.Models.Admin
 {
-    internal class Register
+    internal class Login
     {
-        public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public Register(string username, string email, string password)
+        public Login(string email, string password)
         {
-            Username = username;
             Email = email;
             Password = password;
         }

@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tugas_Akhir_PBO.App.Models;
-using Tugas_Akhir_PBO.App.Context;
+using Tugas_Akhir_PBO.App.Context.Admin;
+using Tugas_Akhir_PBO.App.Models.Admin;
 
 namespace Tugas_Akhir_PBO.View
 {

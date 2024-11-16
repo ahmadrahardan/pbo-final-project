@@ -153,9 +153,49 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_UploadGambar {
+            get {
+                object obj = ResourceManager.GetObject("Button_UploadGambar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Buttton_Selesai {
+            get {
+                object obj = ResourceManager.GetObject("Buttton_Selesai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dashboard {
             get {
                 object obj = ResourceManager.GetObject("Dashboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Form_TambahBarang_withBingkai {
+            get {
+                object obj = ResourceManager.GetObject("Form_TambahBarang_withBingkai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gambaran_Transaksi_with_Panel {
+            get {
+                object obj = ResourceManager.GetObject("Gambaran_Transaksi with Panel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +306,16 @@ namespace Tugas_Akhir_PBO.Properties {
         internal static System.Drawing.Bitmap Transaksi_No_Panel1 {
             get {
                 object obj = ResourceManager.GetObject("Transaksi No Panel1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_09_at_12_28_57_65388105 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-10-09 at 12.28.57_65388105", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

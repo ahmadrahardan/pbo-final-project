@@ -82,6 +82,7 @@
             KatalogBox.Size = new Size(340, 57);
             KatalogBox.TabIndex = 3;
             KatalogBox.TabStop = false;
+            KatalogBox.Click += btnPengelolaanProduk_Click;
             // 
             // TransaksiBox
             // 

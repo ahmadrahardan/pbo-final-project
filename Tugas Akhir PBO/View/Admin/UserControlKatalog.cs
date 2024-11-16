@@ -13,9 +13,14 @@ namespace Tugas_Akhir_PBO.View
     public partial class UserControlKatalog : UserControl
     {
         LandingPage FormParent;
+        UCAddProduk addProduk;
         public UserControlKatalog(LandingPage FormParent)
         {
             InitializeComponent();
+            addProduk = new UCAddProduk(this);
+
+            this.Controls.Add(addProduk);
+            addProduk.Visible = false;
             this.FormParent = FormParent;
         }
 
@@ -34,6 +39,17 @@ namespace Tugas_Akhir_PBO.View
             FormParent.ShowTransaksi();
         }
 
+        private void btnAddProduk_Click(object sender, EventArgs e)
+        {
+            ShowAddProduk();
+        }
+
+        public void ShowAddProduk()
+        {
+            addProduk.Visible = true;
+            addProduk.BringToFront();
+        }
+
         private void LogoutBox_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Apakah Anda yakin ingin keluar?", "Konfirmasi Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -42,6 +58,20 @@ namespace Tugas_Akhir_PBO.View
                 FormParent.ShowLogin();
             }
         }
+
+        //private void InitializePanelKatalog()
+        //{
+        //    panelKatalog = new Panel
+        //    {
+        //        Location = new Point(485, 280),
+        //        Size = new Size(1340, 720), 
+        //        AutoScroll = true,
+        //        BackColor = Color.Transparent,
+        //        Name = "panelDashboard"
+        //    };
+
+        //    this.Controls.Add(panelKatalog);
+        //}
 
         private void UserControlKatalog_Load(object sender, EventArgs e)
         {
