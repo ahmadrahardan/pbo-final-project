@@ -29,6 +29,22 @@ namespace Tugas_Akhir_PBO.View
             LoadKategori();
         }
 
+        public void LoadProdukForEdit(Katalog katalog)
+        {
+            NamaProdukBox.Text = katalog.Nama;
+            HargaProdukBox.Text = katalog.Harga.ToString();
+            KategoriBox.SelectedValue = katalog.id_kategori;
+
+            using (MemoryStream ms = new MemoryStream(katalog.Gambar))
+            {
+                pictureBox.Image = Image.FromStream(ms);
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+            KatalogId = katalog.id;
+            IsEditMode = true;
+        }
+
         private void LoadKategori()
         {
             DataTable dataKategori = KategoriContext.All();
@@ -80,6 +96,7 @@ namespace Tugas_Akhir_PBO.View
             KatalogContext katalogContext = new KatalogContext();
             Katalog katalog = new Katalog
             {
+                id = KatalogId,
                 Nama = namaProduk,
                 Harga = hargaProduk,
                 id_kategori = (int)KategoriBox.SelectedValue,
@@ -88,12 +105,18 @@ namespace Tugas_Akhir_PBO.View
 
             try
             {
-                katalogContext.AddKatalog(katalog);
-                MessageBox.Show("Produk berhasil ditambahkan ke katalog.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (IsEditMode)
+                {
+                    katalogContext.UpdateKatalog(katalog); 
+                    MessageBox.Show("Produk berhasil diperbarui.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    katalogContext.AddKatalog(katalog); 
+                    MessageBox.Show("Produk berhasil ditambahkan ke katalog.", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-                NamaProdukBox.Text = "";
-                HargaProdukBox.Text = "";
-                pictureBox.Image = null;
+                ResetForm();
 
                 UCKatalog.LoadKatalog();
 
@@ -107,11 +130,19 @@ namespace Tugas_Akhir_PBO.View
 
         private void CloseBox_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            ResetForm();
 
+            this.Visible = false;
+        }
+
+        public void ResetForm()
+        {
             NamaProdukBox.Text = "";
             HargaProdukBox.Text = "";
             pictureBox.Image = null;
+
+            IsEditMode = false; 
+            KatalogId = 0; 
         }
 
         private void HargaProdukBox_TextChanged(object sender, EventArgs e)

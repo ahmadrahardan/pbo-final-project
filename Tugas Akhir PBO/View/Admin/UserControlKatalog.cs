@@ -97,9 +97,61 @@ namespace Tugas_Akhir_PBO.View
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
 
+            PictureBox deleteBox = new PictureBox
+            {
+                Size = new Size(26, 26),
+                Location = new Point(160, 205),
+                BackColor = Color.Transparent,
+                BackgroundImage = Properties.Resources.Button_HapusKatalog,
+            };
+
+            deleteBox.Click += (object sender, EventArgs e) =>
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin ingin menghapus produk ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        KatalogContext.DeleteKatalog(katalog.id);
+
+                        panelKatalog.Controls.Remove(card);
+
+                        MessageBox.Show("Produk berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Gagal menghapus produk: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            };
+
+            PictureBox editBox = new PictureBox
+            {
+                Size = new Size(80, 26),
+                Location = new Point(13, 205),
+                BackColor = Color.Transparent,
+                BackgroundImage = Properties.Resources.Button_Edit_Katalog,
+            };
+
+            editBox.Click += (object sender, EventArgs e) =>
+            {
+                try
+                {
+                    ShowAddProduk();
+
+                    addProduk.LoadProdukForEdit(katalog);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Gagal memuat data untuk edit: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            };
+
             card.Controls.Add(namaLabel);
             card.Controls.Add(hargaLabel);
             card.Controls.Add(pictureBox);
+            card.Controls.Add(deleteBox);
+            card.Controls.Add(editBox);
 
             panelKatalog.Controls.Add(card);
         }
@@ -140,6 +192,11 @@ namespace Tugas_Akhir_PBO.View
         }
 
         private void UserControlKatalog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

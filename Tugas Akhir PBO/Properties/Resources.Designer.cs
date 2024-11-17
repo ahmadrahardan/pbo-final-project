@@ -83,6 +83,26 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Edit_Katalog {
+            get {
+                object obj = ResourceManager.GetObject("Button_Edit Katalog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Button_HapusKatalog {
+            get {
+                object obj = ResourceManager.GetObject("Button_HapusKatalog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_KT_Idle {
             get {
                 object obj = ResourceManager.GetObject("Button_KT_Idle", resourceCulture);

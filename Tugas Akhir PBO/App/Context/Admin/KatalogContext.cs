@@ -16,12 +16,12 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
         public void AddKatalog(Katalog katalog)
         {
-            string query = $"INSERT INTO {table} (nama, harga, kategori, gambar) VALUES (@nama, @harga, @kategori, @gambar)";
+            string query = $"INSERT INTO {table} (nama, harga, id_kategori, gambar) VALUES (@nama, @harga, @id_kategori, @gambar)";
 
             NpgsqlParameter[] parameters = {
                 new NpgsqlParameter("@nama", katalog.Nama),
                 new NpgsqlParameter("@harga", katalog.Harga),
-                new NpgsqlParameter("@kategori", katalog.id_kategori),
+                new NpgsqlParameter("@id_kategori", katalog.id_kategori),
                 new NpgsqlParameter("@gambar", katalog.Gambar)
             };
 
@@ -30,7 +30,7 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
         public List<Katalog> GetAllKatalog()
         {
-            string query = $"SELECT id, nama, harga, kategori, gambar FROM {table}";
+            string query = $"SELECT id, nama, harga, id_kategori, gambar FROM {table}";
             DataTable dataTable = queryExecutor(query);
             List<Katalog> katalogList = new List<Katalog>();
 
@@ -38,9 +38,10 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
             {
                 katalogList.Add(new Katalog
                 {
+                    id = Convert.ToInt32(row["id"]),
                     Nama = row["nama"].ToString(),
                     Harga = Convert.ToInt32(row["harga"]),
-                    id_kategori = Convert.ToInt32(row["kategori"]),
+                    id_kategori = Convert.ToInt32(row["id_kategori"]),
                     Gambar = (byte[])row["gambar"]
                 });
             }
@@ -50,12 +51,13 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
         public void UpdateKatalog(Katalog katalog)
         {
-            string query = $"UPDATE {table} SET nama = @nama, harga = @harga, id_kategori = @id_kategori WHERE id = @id";
+            string query = $"UPDATE {table} SET nama = @nama, harga = @harga, gambar = @gambar, id_kategori = @id_kategori WHERE id = @id";
 
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@nama", katalog.Nama),
                 new NpgsqlParameter("@harga", katalog.Harga),
+                new NpgsqlParameter("@gambar", katalog.Gambar),
                 new NpgsqlParameter("@id_kategori", katalog.id_kategori)
             };
 
