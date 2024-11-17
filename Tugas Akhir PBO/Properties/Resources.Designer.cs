@@ -133,6 +133,26 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_MinusTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("Button_MinusTransaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Button_PlusTransaksi {
+            get {
+                object obj = ResourceManager.GetObject("Button_PlusTransaksi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_ST_Idle {
             get {
                 object obj = ResourceManager.GetObject("Button_ST_Idle", resourceCulture);

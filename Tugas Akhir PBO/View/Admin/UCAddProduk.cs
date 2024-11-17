@@ -100,7 +100,8 @@ namespace Tugas_Akhir_PBO.View
                 Nama = namaProduk,
                 Harga = hargaProduk,
                 id_kategori = (int)KategoriBox.SelectedValue,
-                Gambar = imageBytes
+                Gambar = imageBytes,
+                Stok = 0
             };
 
             try

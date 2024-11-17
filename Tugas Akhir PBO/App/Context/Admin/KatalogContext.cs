@@ -16,13 +16,14 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
         public void AddKatalog(Katalog katalog)
         {
-            string query = $"INSERT INTO {table} (nama, harga, id_kategori, gambar) VALUES (@nama, @harga, @id_kategori, @gambar)";
+            string query = $"INSERT INTO {table} (nama, harga, id_kategori, gambar, stok) VALUES (@nama, @harga, @id_kategori, @gambar, @stok)";
 
             NpgsqlParameter[] parameters = {
                 new NpgsqlParameter("@nama", katalog.Nama),
                 new NpgsqlParameter("@harga", katalog.Harga),
                 new NpgsqlParameter("@id_kategori", katalog.id_kategori),
-                new NpgsqlParameter("@gambar", katalog.Gambar)
+                new NpgsqlParameter("@gambar", katalog.Gambar),
+                new NpgsqlParameter("@stok", katalog.Stok)
             };
 
             commandExecutor(query, parameters);
@@ -30,7 +31,7 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
         public List<Katalog> GetAllKatalog()
         {
-            string query = $"SELECT id, nama, harga, id_kategori, gambar FROM {table}";
+            string query = $"SELECT id, nama, harga, id_kategori, gambar, stok FROM {table}";
             DataTable dataTable = queryExecutor(query);
             List<Katalog> katalogList = new List<Katalog>();
 
@@ -42,7 +43,8 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
                     Nama = row["nama"].ToString(),
                     Harga = Convert.ToInt32(row["harga"]),
                     id_kategori = Convert.ToInt32(row["id_kategori"]),
-                    Gambar = (byte[])row["gambar"]
+                    Gambar = (byte[])row["gambar"],
+                    Stok = Convert.ToInt32(row["stok"])
                 });
             }
 
