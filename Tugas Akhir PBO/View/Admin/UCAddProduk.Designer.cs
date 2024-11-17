@@ -35,9 +35,11 @@
             UppicBox = new PictureBox();
             DoneBox = new PictureBox();
             pictureBox = new PictureBox();
+            closeBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)UppicBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DoneBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closeBox).BeginInit();
             SuspendLayout();
             // 
             // KategoriBox
@@ -77,7 +79,7 @@
             UppicBox.BackgroundImage = Properties.Resources.Button_UploadGambar;
             UppicBox.Location = new Point(433, 258);
             UppicBox.Name = "UppicBox";
-            UppicBox.Size = new Size(347, 48);
+            UppicBox.Size = new Size(347, 47);
             UppicBox.TabIndex = 3;
             UppicBox.TabStop = false;
             UppicBox.Click += UppicBox_Click;
@@ -88,7 +90,7 @@
             DoneBox.BackgroundImage = Properties.Resources.Buttton_Selesai;
             DoneBox.Location = new Point(433, 619);
             DoneBox.Name = "DoneBox";
-            DoneBox.Size = new Size(347, 48);
+            DoneBox.Size = new Size(347, 47);
             DoneBox.TabIndex = 4;
             DoneBox.TabStop = false;
             DoneBox.Click += DoneBox_Click;
@@ -103,11 +105,23 @@
             pictureBox.TabStop = false;
             pictureBox.Click += pictureBox_Click;
             // 
+            // closeBox
+            // 
+            closeBox.BackColor = Color.Transparent;
+            closeBox.BackgroundImage = (Image)resources.GetObject("closeBox.BackgroundImage");
+            closeBox.Location = new Point(1234, 13);
+            closeBox.Name = "closeBox";
+            closeBox.Size = new Size(35, 35);
+            closeBox.TabIndex = 6;
+            closeBox.TabStop = false;
+            closeBox.Click += CloseBox_Click;
+            // 
             // UCAddProduk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(closeBox);
             Controls.Add(pictureBox);
             Controls.Add(DoneBox);
             Controls.Add(UppicBox);
@@ -121,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)UppicBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)DoneBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closeBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +148,6 @@
         private PictureBox UppicBox;
         private PictureBox DoneBox;
         private PictureBox pictureBox;
+        private PictureBox closeBox;
     }
 }

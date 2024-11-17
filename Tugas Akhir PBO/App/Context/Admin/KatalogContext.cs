@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,26 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
             };
 
             commandExecutor(query, parameters);
+        }
+
+        public List<Katalog> GetAllKatalog()
+        {
+            string query = $"SELECT id, nama, harga, kategori, gambar FROM {table}";
+            DataTable dataTable = queryExecutor(query);
+            List<Katalog> katalogList = new List<Katalog>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                katalogList.Add(new Katalog
+                {
+                    Nama = row["nama"].ToString(),
+                    Harga = Convert.ToInt32(row["harga"]),
+                    id_kategori = Convert.ToInt32(row["kategori"]),
+                    Gambar = (byte[])row["gambar"]
+                });
+            }
+
+            return katalogList;
         }
 
         public void UpdateKatalog(Katalog katalog)

@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tugas_Akhir_PBO.App.Context.Admin;
 using Tugas_Akhir_PBO.App.Models.Admin;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Tugas_Akhir_PBO.View
 {
     public partial class UCAddProduk : UserControl
     {
+        public bool IsEditMode { get; set; } = false;
+        public int KatalogId { get; set; }
         UserControlKatalog UCKatalog;
         public UCAddProduk(UserControlKatalog UCKatalog)
         {
@@ -23,7 +26,16 @@ namespace Tugas_Akhir_PBO.View
 
         private void UCAddProduk_Load(object sender, EventArgs e)
         {
+            LoadKategori();
+        }
 
+        private void LoadKategori()
+        {
+            DataTable dataKategori = KategoriContext.All();
+            KategoriBox.DisplayMember = "nama";
+            KategoriBox.ValueMember = "id";
+            KategoriBox.DataSource = dataKategori;
+            KategoriBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void NamaProdukBox_TextChanged(object sender, EventArgs e)
@@ -51,9 +63,8 @@ namespace Tugas_Akhir_PBO.View
             string namaProduk = NamaProdukBox.Text;
             int hargaProduk;
             int.TryParse(HargaProdukBox.Text, out hargaProduk);
-            int kategori = KategoriBox.SelectedIndex + 1;
 
-            if (string.IsNullOrWhiteSpace(namaProduk) || hargaProduk <= 0 || kategori <= 0 || pictureBox.Image == null)
+            if (string.IsNullOrWhiteSpace(namaProduk) || hargaProduk <= 0 ||  pictureBox.Image == null)
             {
                 MessageBox.Show("Pastikan semua data terisi dengan benar, termasuk gambar.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -71,7 +82,7 @@ namespace Tugas_Akhir_PBO.View
             {
                 Nama = namaProduk,
                 Harga = hargaProduk,
-                id_kategori = kategori,
+                id_kategori = (int)KategoriBox.SelectedValue,
                 Gambar = imageBytes
             };
 
@@ -82,13 +93,25 @@ namespace Tugas_Akhir_PBO.View
 
                 NamaProdukBox.Text = "";
                 HargaProdukBox.Text = "";
-                KategoriBox.SelectedIndex = -1;
                 pictureBox.Image = null;
+
+                UCKatalog.LoadKatalog();
+
+                this.Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void CloseBox_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+
+            NamaProdukBox.Text = "";
+            HargaProdukBox.Text = "";
+            pictureBox.Image = null;
         }
 
         private void HargaProdukBox_TextChanged(object sender, EventArgs e)

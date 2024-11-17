@@ -173,6 +173,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dashboard {
             get {
                 object obj = ResourceManager.GetObject("Dashboard", resourceCulture);
@@ -233,6 +243,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Panel_BarangAllUse {
+            get {
+                object obj = ResourceManager.GetObject("Panel_BarangAllUse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Panel_Login {
             get {
                 object obj = ResourceManager.GetObject("Panel Login", resourceCulture);
@@ -283,16 +303,6 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap top_view_photography_accesories_with_copy_space {
-            get {
-                object obj = ResourceManager.GetObject("top-view-photography-accesories-with-copy-space", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Transaksi_No_Panel {
             get {
                 object obj = ResourceManager.GetObject("Transaksi No Panel", resourceCulture);
@@ -306,16 +316,6 @@ namespace Tugas_Akhir_PBO.Properties {
         internal static System.Drawing.Bitmap Transaksi_No_Panel1 {
             get {
                 object obj = ResourceManager.GetObject("Transaksi No Panel1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2024_10_09_at_12_28_57_65388105 {
-            get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2024-10-09 at 12.28.57_65388105", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

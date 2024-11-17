@@ -8,6 +8,7 @@ namespace Tugas_Akhir_PBO.App.Models.Admin
 {
     internal class Katalog
     {
+        public int id { get; set; }
         public string Nama { get; set; }
         public int Harga { get; set; }
         public int id_kategori { get; set; }
