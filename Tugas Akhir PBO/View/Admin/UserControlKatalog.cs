@@ -70,7 +70,7 @@ namespace Tugas_Akhir_PBO.View
 
             Label namaLabel = new Label
             {
-                Text = katalog.Nama,
+                Text = katalog.NamaProduk,
                 Font = new Font("Poppins", 9, FontStyle.Bold),
                 BackColor = Color.Transparent,
                 ForeColor = Color.Gold,
@@ -112,7 +112,7 @@ namespace Tugas_Akhir_PBO.View
                 {
                     try
                     {
-                        KatalogContext.DeleteKatalog(katalog.id);
+                        KatalogContext.DeleteKatalog(katalog.id_katalog);
 
                         panelKatalog.Controls.Remove(card);
 

@@ -11,7 +11,7 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 {
     internal class KategoriContext : Database
     {
-        private static string table = "kategori";
+        private static string table = "Kategori";
 
         public static DataTable All()
         {

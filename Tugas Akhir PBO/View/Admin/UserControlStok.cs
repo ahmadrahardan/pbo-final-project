@@ -65,7 +65,7 @@ namespace Tugas_Akhir_PBO.View
 
             Label namaLabel = new Label
             {
-                Text = katalog.Nama,
+                Text = katalog.NamaProduk,
                 Font = new Font("Poppins", 9, FontStyle.Bold),
                 BackColor = Color.Transparent,
                 ForeColor = Color.Gold,
@@ -117,7 +117,7 @@ namespace Tugas_Akhir_PBO.View
 
                 try
                 {
-                    StokContext.UpdateStok(katalog.id, katalog.Stok); // Update stok di database
+                    StokContext.UpdateStok(katalog.id_katalog, katalog.Stok); 
                 }
                 catch (Exception ex)
                 {
@@ -142,7 +142,7 @@ namespace Tugas_Akhir_PBO.View
 
                     try
                     {
-                        StokContext.UpdateStok(katalog.id, katalog.Stok); // Update stok di database
+                        StokContext.UpdateStok(katalog.id_katalog, katalog.Stok); 
                     }
                     catch (Exception ex)
                     {

@@ -11,16 +11,16 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 {
     internal class StokContext : Database
     {
-        private static string table = "produk";
+        private static string table = "Katalog";
 
         public static void UpdateStok(int id, int stok)
         {
-            string query = $"UPDATE {table} SET stok = @stok WHERE id = @id";
+            string query = $"UPDATE {table} SET stok = @stok WHERE id_katalog = @id_katalog";
 
             NpgsqlParameter[] parameters =
             {
                 new NpgsqlParameter("@stok", stok),
-                new NpgsqlParameter("@id", id)
+                new NpgsqlParameter("@id_katalog", id)
             };
 
             commandExecutor(query, parameters);

@@ -31,7 +31,7 @@ namespace Tugas_Akhir_PBO.View
 
         public void LoadProdukForEdit(Katalog katalog)
         {
-            NamaProdukBox.Text = katalog.Nama;
+            NamaProdukBox.Text = katalog.NamaProduk;
             HargaProdukBox.Text = katalog.Harga.ToString();
             KategoriBox.SelectedValue = katalog.id_kategori;
 
@@ -41,15 +41,15 @@ namespace Tugas_Akhir_PBO.View
                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            KatalogId = katalog.id;
+            KatalogId = katalog.id_katalog;
             IsEditMode = true;
         }
 
         private void LoadKategori()
         {
             DataTable dataKategori = KategoriContext.All();
-            KategoriBox.DisplayMember = "nama";
-            KategoriBox.ValueMember = "id";
+            KategoriBox.DisplayMember = "nama_kategori";
+            KategoriBox.ValueMember = "id_kategori";
             KategoriBox.DataSource = dataKategori;
             KategoriBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
@@ -96,8 +96,8 @@ namespace Tugas_Akhir_PBO.View
             KatalogContext katalogContext = new KatalogContext();
             Katalog katalog = new Katalog
             {
-                id = KatalogId,
-                Nama = namaProduk,
+                id_katalog = KatalogId,
+                NamaProduk = namaProduk,
                 Harga = hargaProduk,
                 id_kategori = (int)KategoriBox.SelectedValue,
                 Gambar = imageBytes,

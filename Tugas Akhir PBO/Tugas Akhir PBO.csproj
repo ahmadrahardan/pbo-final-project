@@ -29,10 +29,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="App\Context\Mitra\" />
-    <Folder Include="App\Models\Mitra\" />
-    <Folder Include="View\Mitra\" />
-  </ItemGroup>
-
 </Project>

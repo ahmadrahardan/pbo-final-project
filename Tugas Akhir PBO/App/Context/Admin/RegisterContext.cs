@@ -13,7 +13,7 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
     {
         public bool Register(Register register)
         {
-            string query = "INSERT INTO admin (username, email, password) VALUES (@username, @email, @password)";
+            string query = "INSERT INTO Admin (username, email, password) VALUES (@username, @email, @password)";
 
             NpgsqlParameter[] parameters = {
                 new NpgsqlParameter("@username", register.Username),

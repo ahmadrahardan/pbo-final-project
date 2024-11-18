@@ -15,7 +15,7 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
         public Login Validate(string email, string password)
         {
             Login loginAdmin = null;
-            string query = "SELECT * FROM admin WHERE email = @email AND password = @password";
+            string query = "SELECT * FROM Admin WHERE email = @email AND password = @password";
 
             NpgsqlParameter[] parameters = {
                 new NpgsqlParameter("@email", email),
