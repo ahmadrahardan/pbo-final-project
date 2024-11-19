@@ -1,4 +1,5 @@
 using Tugas_Akhir_PBO.View;
+using Tugas_Akhir_PBO.View.Mitra;
 
 namespace Tugas_Akhir_PBO
 {
@@ -13,7 +14,7 @@ namespace Tugas_Akhir_PBO
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LandingPage());
+            Application.Run(new mLandingPage());
         }
     }
 }

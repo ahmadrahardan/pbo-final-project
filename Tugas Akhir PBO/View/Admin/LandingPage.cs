@@ -19,7 +19,6 @@ namespace Tugas_Akhir_PBO.View
         UserControlStok pengelolaanStok;
         UserControlKatalog pengelolaanProduk;
         UserControlTransaksi transaksi;
-        //UCAddProduk addProduk;
         System.Windows.Forms.Timer timer;
         public LandingPage()
         {
@@ -31,7 +30,6 @@ namespace Tugas_Akhir_PBO.View
             pengelolaanStok = new UserControlStok(this);
             pengelolaanProduk = new UserControlKatalog(this);
             transaksi = new UserControlTransaksi(this);
-            //addProduk = new UCAddProduk(this);
 
             this.Controls.Add(splashScreen);
             this.Controls.Add(login);
@@ -40,7 +38,6 @@ namespace Tugas_Akhir_PBO.View
             this.Controls.Add(pengelolaanStok);
             this.Controls.Add(pengelolaanProduk);
             this.Controls.Add(transaksi);
-            //this.Controls.Add(addProduk);
 
             HideAllUserControl();
             ShowSplashScreen();
@@ -107,12 +104,6 @@ namespace Tugas_Akhir_PBO.View
             HideAllUserControl();
             transaksi.Visible = true;
         }
-
-        //public void ShowAddProduk()
-        //{
-        //    HideAllUserControl();
-        //    addProduk.Visible = true;
-        //}
 
         private void LandingPage_Load(object sender, EventArgs e)
         {

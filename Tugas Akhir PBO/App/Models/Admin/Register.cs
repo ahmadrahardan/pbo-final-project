@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tugas_Akhir_PBO.App.Context;
 
 namespace Tugas_Akhir_PBO.App.Models.Admin
 {

@@ -143,6 +143,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Mitra_Edit_Katalog {
+            get {
+                object obj = ResourceManager.GetObject("Button_Mitra_Edit Katalog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_PlusTransaksi {
             get {
                 object obj = ResourceManager.GetObject("Button_PlusTransaksi", resourceCulture);
@@ -233,6 +243,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dashboard_No_Panel__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Dashboard No Panel (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Form_TambahBarang_withBingkai {
             get {
                 object obj = ResourceManager.GetObject("Form_TambahBarang_withBingkai", resourceCulture);
@@ -283,6 +303,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mitra_Katalog_No_Panel {
+            get {
+                object obj = ResourceManager.GetObject("Mitra_Katalog No Panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Panel_BarangAllUse {
             get {
                 object obj = ResourceManager.GetObject("Panel_BarangAllUse", resourceCulture);
@@ -323,6 +353,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Panel_Mitra_BarangAllUse {
+            get {
+                object obj = ResourceManager.GetObject("Panel_Mitra_BarangAllUse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pannel_Regist {
             get {
                 object obj = ResourceManager.GetObject("Pannel Regist", resourceCulture);
@@ -336,6 +376,16 @@ namespace Tugas_Akhir_PBO.Properties {
         internal static System.Drawing.Bitmap SignUpButton {
             get {
                 object obj = ResourceManager.GetObject("SignUpButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Stok_No_Panel__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Stok No Panel (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
