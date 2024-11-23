@@ -20,10 +20,12 @@ namespace Tugas_Akhir_PBO.View.Mitra
         public bool IsEditMode { get; set; } = false;
         public int KatalogId { get; set; }
         mUserControlKatalog UCKatalog;
-        public mUCAddProduk(mUserControlKatalog UCKatalog)
+        mUserControlStok UCStok;
+        public mUCAddProduk(mUserControlKatalog UCKatalog, mUserControlStok UCStok)
         {
             InitializeComponent();
             this.UCKatalog = UCKatalog;
+            this.UCStok = UCStok;
         }
 
         private void mUCAddProduk_Load(object sender, EventArgs e)
@@ -117,6 +119,7 @@ namespace Tugas_Akhir_PBO.View.Mitra
                 ResetForm();
 
                 UCKatalog.LoadKatalog();
+                UCStok.LoadKatalog();
 
                 this.Visible = false;
             }

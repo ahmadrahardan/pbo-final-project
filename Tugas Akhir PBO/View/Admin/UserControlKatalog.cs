@@ -16,12 +16,14 @@ namespace Tugas_Akhir_PBO.View
     {
         LandingPage FormParent;
         UCAddProduk addProduk;
+        UserControlStok stokControl;
+
         FlowLayoutPanel panelKatalog;
-        public UserControlKatalog(LandingPage FormParent)
+        public UserControlKatalog(LandingPage FormParent, UserControlStok stokControl)
         {
             InitializeComponent();
-            addProduk = new UCAddProduk(this);
-
+            this.stokControl = stokControl;
+            addProduk = new UCAddProduk(this, stokControl);
             this.Controls.Add(addProduk);
             addProduk.Visible = false;
             this.FormParent = FormParent;

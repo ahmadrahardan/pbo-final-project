@@ -43,7 +43,7 @@
             // 
             UsernameBox.BorderStyle = BorderStyle.None;
             UsernameBox.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            UsernameBox.Location = new Point(1289, 453);
+            UsernameBox.Location = new Point(1289, 462);
             UsernameBox.Name = "UsernameBox";
             UsernameBox.Size = new Size(353, 23);
             UsernameBox.TabIndex = 0;
@@ -52,16 +52,17 @@
             // 
             EmailBox.BorderStyle = BorderStyle.None;
             EmailBox.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            EmailBox.Location = new Point(1289, 527);
+            EmailBox.Location = new Point(1289, 535);
             EmailBox.Name = "EmailBox";
             EmailBox.Size = new Size(353, 23);
             EmailBox.TabIndex = 1;
+            EmailBox.TextChanged += EmailBox_TextChanged;
             // 
             // PasswordBox
             // 
             PasswordBox.BorderStyle = BorderStyle.None;
             PasswordBox.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PasswordBox.Location = new Point(1289, 595);
+            PasswordBox.Location = new Point(1289, 604);
             PasswordBox.Name = "PasswordBox";
             PasswordBox.Size = new Size(353, 23);
             PasswordBox.TabIndex = 2;
@@ -70,7 +71,7 @@
             // 
             ConfirmPasswordBox.BorderStyle = BorderStyle.None;
             ConfirmPasswordBox.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ConfirmPasswordBox.Location = new Point(1289, 664);
+            ConfirmPasswordBox.Location = new Point(1289, 676);
             ConfirmPasswordBox.Name = "ConfirmPasswordBox";
             ConfirmPasswordBox.Size = new Size(353, 23);
             ConfirmPasswordBox.TabIndex = 3;
@@ -79,7 +80,7 @@
             // 
             RegistrationCodeBox.BorderStyle = BorderStyle.None;
             RegistrationCodeBox.Font = new Font("Poppins", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            RegistrationCodeBox.Location = new Point(1289, 735);
+            RegistrationCodeBox.Location = new Point(1289, 744);
             RegistrationCodeBox.Name = "RegistrationCodeBox";
             RegistrationCodeBox.Size = new Size(353, 23);
             RegistrationCodeBox.TabIndex = 4;
@@ -100,7 +101,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Poppins", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1467, 895);
+            label1.Location = new Point(1464, 892);
             label1.Name = "label1";
             label1.Size = new Size(44, 23);
             label1.TabIndex = 6;

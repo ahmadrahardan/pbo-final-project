@@ -16,11 +16,13 @@ namespace Tugas_Akhir_PBO.View.Mitra
     {
         mLandingPage FormParent;
         mUCAddProduk addProduk;
+        mUserControlStok stokControl;
         FlowLayoutPanel panelKatalog;
-        public mUserControlKatalog(mLandingPage FormParent)
+        public mUserControlKatalog(mLandingPage FormParent, mUserControlStok stokControl)
         {
             InitializeComponent();
-            addProduk = new mUCAddProduk(this);
+            this.stokControl = stokControl;
+            addProduk = new mUCAddProduk(this, stokControl);
 
             this.Controls.Add(addProduk);
             addProduk.Visible = false;

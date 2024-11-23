@@ -33,6 +33,7 @@
             PasswordBox = new TextBox();
             RegisterLabel = new Label();
             pictureBox1 = new PictureBox();
+            MitraLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -78,11 +79,24 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += LoginButton_Click;
             // 
+            // MitraLabel
+            // 
+            MitraLabel.AutoSize = true;
+            MitraLabel.BackColor = Color.Transparent;
+            MitraLabel.Font = new Font("Poppins", 7.20000029F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MitraLabel.Location = new Point(1463, 712);
+            MitraLabel.Name = "MitraLabel";
+            MitraLabel.Size = new Size(44, 23);
+            MitraLabel.TabIndex = 4;
+            MitraLabel.Text = "Login";
+            MitraLabel.Click += MitraLabel_Click;
+            // 
             // UserControlLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(MitraLabel);
             Controls.Add(pictureBox1);
             Controls.Add(RegisterLabel);
             Controls.Add(PasswordBox);
@@ -101,5 +115,6 @@
         private TextBox PasswordBox;
         private Label RegisterLabel;
         private PictureBox pictureBox1;
+        private Label MitraLabel;
     }
 }

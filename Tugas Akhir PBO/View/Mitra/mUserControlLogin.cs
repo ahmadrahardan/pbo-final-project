@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tugas_Akhir_PBO.App.Context.Mitra;
 using Tugas_Akhir_PBO.App.Models.Mitra;
+using Tugas_Akhir_PBO.View;
 
 namespace Tugas_Akhir_PBO.View.Mitra
 {
@@ -50,6 +51,13 @@ namespace Tugas_Akhir_PBO.View.Mitra
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
             PasswordBox.PasswordChar = '*';
+        }
+
+        private void AdminLabel_Click(object sender, EventArgs e)
+        {
+            this.FormParent.Hide();
+            LandingPage adminForm = new LandingPage();
+            adminForm.Show();
         }
 
         public void ClearTextBox()

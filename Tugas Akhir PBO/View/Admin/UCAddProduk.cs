@@ -18,10 +18,12 @@ namespace Tugas_Akhir_PBO.View
         public bool IsEditMode { get; set; } = false;
         public int KatalogId { get; set; }
         UserControlKatalog UCKatalog;
-        public UCAddProduk(UserControlKatalog UCKatalog)
+        UserControlStok UCStok;
+        public UCAddProduk(UserControlKatalog UCKatalog, UserControlStok UCStok)
         {
             InitializeComponent();
             this.UCKatalog = UCKatalog;
+            this.UCStok = UCStok;
         }
 
         private void UCAddProduk_Load(object sender, EventArgs e)
@@ -120,6 +122,7 @@ namespace Tugas_Akhir_PBO.View
                 ResetForm();
 
                 UCKatalog.LoadKatalog();
+                UCStok.LoadKatalog();
 
                 this.Visible = false;
             }

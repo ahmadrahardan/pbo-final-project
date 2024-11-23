@@ -81,5 +81,10 @@ namespace Tugas_Akhir_PBO.View.Mitra
         {
 
         }
+
+        private void EmailBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

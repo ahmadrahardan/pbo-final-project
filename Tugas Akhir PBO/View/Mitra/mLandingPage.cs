@@ -25,7 +25,7 @@ namespace Tugas_Akhir_PBO.View.Mitra
             register = new mUserControlRegister(this);
             dashboard = new mUserControlDashboard(this);
             pengelolaanStok = new mUserControlStok(this);
-            pengelolaanProduk = new mUserControlKatalog(this);
+            pengelolaanProduk = new mUserControlKatalog(this, pengelolaanStok);
 
             this.Controls.Add(login);
             this.Controls.Add(register);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tugas_Akhir_PBO.App.Context.Admin;
 using Tugas_Akhir_PBO.App.Models.Admin;
+using Tugas_Akhir_PBO.View.Mitra;
 
 namespace Tugas_Akhir_PBO.View
 {
@@ -45,6 +46,13 @@ namespace Tugas_Akhir_PBO.View
             {
                 MessageBox.Show("Email atau Password salah. Masukkan dengan benar!", "LOGIN FAILED", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void MitraLabel_Click(object sender, EventArgs e)
+        {
+            this.FormParent.Hide();
+            mLandingPage mitraForm = new mLandingPage();
+            mitraForm.Show();
         }
 
         private void passwordBox_TextChanged(object sender, EventArgs e)
