@@ -17,8 +17,9 @@ namespace Tugas_Akhir_PBO.View
         UserControlRegister register;
         UserControlDashboard dashboard;
         UserControlStok pengelolaanStok;
-        UserControlKatalog pengelolaanProduk;
         UserControlTransaksi transaksi;
+        UserControlKatalog pengelolaanProduk;
+        
         System.Windows.Forms.Timer timer;
         public LandingPage()
         {
@@ -28,8 +29,9 @@ namespace Tugas_Akhir_PBO.View
             register = new UserControlRegister(this);
             dashboard = new UserControlDashboard(this);
             pengelolaanStok = new UserControlStok(this);
-            pengelolaanProduk = new UserControlKatalog(this, pengelolaanStok);
             transaksi = new UserControlTransaksi(this);
+            pengelolaanProduk = new UserControlKatalog(this, pengelolaanStok, transaksi);
+            
 
             this.Controls.Add(splashScreen);
             this.Controls.Add(login);

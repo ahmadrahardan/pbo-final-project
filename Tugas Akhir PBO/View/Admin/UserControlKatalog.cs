@@ -17,13 +17,15 @@ namespace Tugas_Akhir_PBO.View
         LandingPage FormParent;
         UCAddProduk addProduk;
         UserControlStok stokControl;
+        UserControlTransaksi transaksiControl;
 
         FlowLayoutPanel panelKatalog;
-        public UserControlKatalog(LandingPage FormParent, UserControlStok stokControl)
+        public UserControlKatalog(LandingPage FormParent, UserControlStok stokControl, UserControlTransaksi transaksiControl)
         {
             InitializeComponent();
             this.stokControl = stokControl;
-            addProduk = new UCAddProduk(this, stokControl);
+            this.transaksiControl = transaksiControl;
+            addProduk = new UCAddProduk(this, stokControl, transaksiControl);
             this.Controls.Add(addProduk);
             addProduk.Visible = false;
             this.FormParent = FormParent;
@@ -117,6 +119,9 @@ namespace Tugas_Akhir_PBO.View
                         KatalogContext.DeleteKatalog(katalog.id_katalog);
 
                         panelKatalog.Controls.Remove(card);
+
+                        stokControl.LoadKatalog();
+                        transaksiControl.LoadKatalog();
 
                         MessageBox.Show("Produk berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

@@ -19,11 +19,13 @@ namespace Tugas_Akhir_PBO.View
         public int KatalogId { get; set; }
         UserControlKatalog UCKatalog;
         UserControlStok UCStok;
-        public UCAddProduk(UserControlKatalog UCKatalog, UserControlStok UCStok)
+        UserControlTransaksi UCTransaksi;
+        public UCAddProduk(UserControlKatalog UCKatalog, UserControlStok UCStok, UserControlTransaksi UCTransaksi)
         {
             InitializeComponent();
             this.UCKatalog = UCKatalog;
             this.UCStok = UCStok;
+            this.UCTransaksi = UCTransaksi;
         }
 
         private void UCAddProduk_Load(object sender, EventArgs e)
@@ -123,6 +125,7 @@ namespace Tugas_Akhir_PBO.View
 
                 UCKatalog.LoadKatalog();
                 UCStok.LoadKatalog();
+                UCTransaksi.LoadKatalog();
 
                 this.Visible = false;
             }

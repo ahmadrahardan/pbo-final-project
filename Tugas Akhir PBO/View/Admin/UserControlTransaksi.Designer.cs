@@ -34,7 +34,6 @@
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
-            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -96,21 +95,11 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += btnPengelolaanStok_Click;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Location = new Point(1332, 165);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(540, 859);
-            panel1.TabIndex = 5;
-            // 
             // UserControlTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Transaksi_No_Panel1;
-            Controls.Add(panel1);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -135,6 +124,5 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
-        private Panel panel1;
     }
 }

@@ -60,7 +60,8 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
                 new NpgsqlParameter("@nama_produk", katalog.NamaProduk),
                 new NpgsqlParameter("@harga", katalog.Harga),
                 new NpgsqlParameter("@id_kategori", katalog.id_kategori),
-                new NpgsqlParameter("@gambar", katalog.Gambar)
+                new NpgsqlParameter("@gambar", katalog.Gambar),
+                new NpgsqlParameter("@id_katalog", katalog.id_katalog)
             };
 
             commandExecutor(query, parameters);

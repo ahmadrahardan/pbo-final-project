@@ -118,6 +118,8 @@ namespace Tugas_Akhir_PBO.View.Mitra
 
                         panelKatalog.Controls.Remove(card);
 
+                        stokControl.LoadKatalog();
+
                         MessageBox.Show("Produk berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
