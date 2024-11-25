@@ -17,6 +17,8 @@ namespace Tugas_Akhir_PBO.View
         LandingPage FormParent;
         FlowLayoutPanel panelKatalog;
         FlowLayoutPanel panelTransaksi;
+        Label totalHargaLabel;
+
         public UserControlTransaksi(LandingPage FormParent)
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace Tugas_Akhir_PBO.View
 
             InitializePanelKatalog();
             InitializePanelTransaksi();
+            InitializeTotalHargaLabel();
             LoadKatalog();
 
         }
@@ -58,6 +61,21 @@ namespace Tugas_Akhir_PBO.View
             };
 
             this.Controls.Add(panelTransaksi);
+        }
+
+        private void InitializeTotalHargaLabel()
+        {
+            totalHargaLabel = new Label
+            {
+                Text = "Rp0",
+                Font = new Font("Poppins", 14, FontStyle.Bold),
+                ForeColor = Color.Black,
+                BackColor = Color.Transparent,
+                Location = new Point(1650, 827), 
+                AutoSize = true
+            };
+
+            this.Controls.Add(totalHargaLabel);
         }
 
         public void LoadKatalog()
@@ -122,6 +140,7 @@ namespace Tugas_Akhir_PBO.View
             plusBox.Click += (object sender, EventArgs e) =>
             {
                 AddTransaksiCard(katalog);
+                UpdateTotalHarga();
             };
 
             card.Controls.Add(namaLabel);
@@ -193,6 +212,7 @@ namespace Tugas_Akhir_PBO.View
             deleteBox.Click += (object sender, EventArgs e) =>
             {
                 panelTransaksi.Controls.Remove(card);
+                UpdateTotalHarga();
             };
 
             Label jumlahLabel = new Label
@@ -216,8 +236,12 @@ namespace Tugas_Akhir_PBO.View
             plusBox.Click += (object sender, EventArgs e) =>
             {
                 int jumlah = int.Parse(jumlahLabel.Text);
-                jumlah++; 
-                jumlahLabel.Text = jumlah.ToString();
+                if (jumlah < katalog.Stok) 
+                {
+                    jumlah++;
+                    jumlahLabel.Text = jumlah.ToString();
+                    UpdateTotalHarga();
+                }
             };
 
             PictureBox minusBox = new PictureBox
@@ -235,6 +259,7 @@ namespace Tugas_Akhir_PBO.View
                 {
                     jumlah--; 
                     jumlahLabel.Text = jumlah.ToString();
+                    UpdateTotalHarga();
                 }
 
             };
@@ -250,6 +275,27 @@ namespace Tugas_Akhir_PBO.View
             panelTransaksi.Controls.Add(card);
         }
 
+        private void UpdateTotalHarga()
+        {
+            decimal totalHarga = 0;
+
+            foreach (Panel card in panelTransaksi.Controls.OfType<Panel>())
+            {
+                Label jumlahLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(362, 88));
+                Label hargaLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(145, 40));
+
+                if (jumlahLabel != null && hargaLabel != null)
+                {
+                    int jumlah = int.Parse(jumlahLabel.Text);
+                    string hargaText = hargaLabel.Text.Replace("Rp", "").Replace(".", "").Trim();
+                    decimal harga = decimal.Parse(hargaText);
+
+                    totalHarga += jumlah * harga;
+                }
+            }
+
+            totalHargaLabel.Text = $"Rp{totalHarga:N0}";
+        }
 
         private void btnPengelolaanStok_Click(object sender, EventArgs e)
         {
