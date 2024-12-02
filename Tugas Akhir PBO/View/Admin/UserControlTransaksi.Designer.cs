@@ -34,11 +34,13 @@
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -95,11 +97,22 @@
             pictureBox5.TabStop = false;
             pictureBox5.Click += btnPengelolaanStok_Click;
             // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImage = Properties.Resources.Button_Lanjutkan;
+            pictureBox6.Location = new Point(1357, 886);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(458, 72);
+            pictureBox6.TabIndex = 5;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += btnAddTransaksi_Click;
+            // 
             // UserControlTransaksi
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -114,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
@@ -124,5 +138,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
     }
 }

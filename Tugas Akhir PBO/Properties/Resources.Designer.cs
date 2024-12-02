@@ -123,6 +123,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Button_Lanjutkan {
+            get {
+                object obj = ResourceManager.GetObject("Button_Lanjutkan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_Logout {
             get {
                 object obj = ResourceManager.GetObject("Button_Logout", resourceCulture);
@@ -223,6 +233,16 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CETAK_STRUK {
+            get {
+                object obj = ResourceManager.GetObject("CETAK STRUK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -256,6 +276,16 @@ namespace Tugas_Akhir_PBO.Properties {
         internal static System.Drawing.Bitmap Form_TambahBarang_withBingkai {
             get {
                 object obj = ResourceManager.GetObject("Form_TambahBarang_withBingkai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FORM_TRANSAKSI {
+            get {
+                object obj = ResourceManager.GetObject("FORM TRANSAKSI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

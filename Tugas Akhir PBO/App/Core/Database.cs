@@ -73,5 +73,28 @@ namespace Tugas_Akhir_PBO.App.Core
                 throw new Exception(e.Message);
             }
         }
+
+        public static int commandExecutorReturnId(string query, NpgsqlParameter[] parameters = null)
+        {
+            try
+            {
+                openConnection();
+                command.CommandText = query;
+                if (parameters != null)
+                {
+                    command.Parameters.AddRange(parameters);
+                    command.Prepare();
+                }
+                int id = Convert.ToInt32(command.ExecuteScalar());
+                command.Parameters.Clear();
+                closeConnection();
+                return id;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error executing query with RETURNING: {e.Message}");
+            }
+        }
+
     }
 }

@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tugas_Akhir_PBO.App.Context.Admin;
 using Tugas_Akhir_PBO.App.Models.Admin;
+using Tugas_Akhir_PBO.View.Admin;
 
 namespace Tugas_Akhir_PBO.View
 {
     public partial class UserControlTransaksi : UserControl
     {
         LandingPage FormParent;
+        UCAddTransaksi addTransaksi;
         FlowLayoutPanel panelKatalog;
         FlowLayoutPanel panelTransaksi;
         Label totalHargaLabel;
@@ -23,6 +25,9 @@ namespace Tugas_Akhir_PBO.View
         {
             InitializeComponent();
             this.FormParent = FormParent;
+            addTransaksi = new UCAddTransaksi(this);
+            this.Controls.Add(addTransaksi);
+            addTransaksi.Visible = false;
 
             InitializePanelKatalog();
             InitializePanelTransaksi();
@@ -153,9 +158,7 @@ namespace Tugas_Akhir_PBO.View
 
         private void AddTransaksiCard(Katalog katalog)
         {
-            Panel existingCard = panelTransaksi.Controls
-                .OfType<Panel>()
-                .FirstOrDefault(c => c.Tag != null && (int)c.Tag == katalog.id_katalog);
+            Panel existingCard = panelTransaksi.Controls.OfType<Panel>().FirstOrDefault(c => c.Tag != null && (int)c.Tag == katalog.id_katalog);
 
             if (existingCard != null)
             {
@@ -275,27 +278,68 @@ namespace Tugas_Akhir_PBO.View
             panelTransaksi.Controls.Add(card);
         }
 
+        public decimal TotalHarga
+        {
+            get
+            {
+                decimal totalHarga = 0;
+
+                foreach (Panel card in panelTransaksi.Controls.OfType<Panel>())
+                {
+                    Label jumlahLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(362, 88));
+                    Label hargaLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(145, 40));
+
+                    if (jumlahLabel != null && hargaLabel != null)
+                    {
+                        int jumlah = int.Parse(jumlahLabel.Text);
+                        string hargaText = hargaLabel.Text.Replace("Rp", "").Replace(".", "").Trim();
+                        decimal harga = decimal.Parse(hargaText);
+
+                        totalHarga += jumlah * harga;
+                    }
+                }
+
+                return totalHarga;
+            }
+        }
+
         private void UpdateTotalHarga()
         {
-            decimal totalHarga = 0;
-
-            foreach (Panel card in panelTransaksi.Controls.OfType<Panel>())
-            {
-                Label jumlahLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(362, 88));
-                Label hargaLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(145, 40));
-
-                if (jumlahLabel != null && hargaLabel != null)
-                {
-                    int jumlah = int.Parse(jumlahLabel.Text);
-                    string hargaText = hargaLabel.Text.Replace("Rp", "").Replace(".", "").Trim();
-                    decimal harga = decimal.Parse(hargaText);
-
-                    totalHarga += jumlah * harga;
-                }
-            }
-
-            totalHargaLabel.Text = $"Rp{totalHarga:N0}";
+            totalHargaLabel.Text = $"Rp{TotalHarga:N0}";
         }
+
+        public FlowLayoutPanel GetPanelTransaksi()
+        {
+            return panelTransaksi;
+        }
+
+        public void ResetTransaksi()
+        {
+            panelTransaksi.Controls.Clear();
+            UpdateTotalHarga();
+        }
+
+        public void ShowAddTransaksi()
+        {
+            addTransaksi.Visible = true;
+            addTransaksi.BringToFront();
+        }
+
+        private void btnAddTransaksi_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(totalHargaLabel.Text) && totalHargaLabel.Text != "Rp0")
+            {
+                ShowAddTransaksi();
+            }
+            else
+            {
+                MessageBox.Show("Tidak ada item dalam daftar transaksi. Tambahkan item terlebih dahulu!",
+                    "Informasi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+        }
+
 
         private void btnPengelolaanStok_Click(object sender, EventArgs e)
         {
