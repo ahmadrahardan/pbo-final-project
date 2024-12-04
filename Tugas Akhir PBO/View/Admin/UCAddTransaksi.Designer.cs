@@ -62,10 +62,10 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.BackgroundImage = Properties.Resources.Button_HapusKatalog;
-            pictureBox2.Location = new Point(1229, 16);
+            pictureBox2.BackgroundImage = Properties.Resources.Button_close1;
+            pictureBox2.Location = new Point(1200, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(35, 35);
+            pictureBox2.Size = new Size(80, 40);
             pictureBox2.TabIndex = 4;
             pictureBox2.TabStop = false;
             pictureBox2.Click += CloseBox_Click;

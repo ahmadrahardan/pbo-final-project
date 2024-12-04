@@ -108,10 +108,10 @@
             // closeBox
             // 
             closeBox.BackColor = Color.Transparent;
-            closeBox.BackgroundImage = (Image)resources.GetObject("closeBox.BackgroundImage");
-            closeBox.Location = new Point(1234, 13);
+            closeBox.BackgroundImage = Properties.Resources.Button_close;
+            closeBox.Location = new Point(1200, 0);
             closeBox.Name = "closeBox";
-            closeBox.Size = new Size(35, 35);
+            closeBox.Size = new Size(80, 40);
             closeBox.TabIndex = 6;
             closeBox.TabStop = false;
             closeBox.Click += CloseBox_Click;

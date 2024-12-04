@@ -78,5 +78,17 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
             commandExecutor(query, parameters);
         }
+
+        public void UpdateStokProduk(int idKatalog, int jumlahDikurangi)
+        {
+            string query = "UPDATE Katalog SET stok = stok - @jumlahDikurangi WHERE id_katalog = @idKatalog";
+
+            NpgsqlParameter[] parameters = {
+                new NpgsqlParameter("@idKatalog", idKatalog),
+                new NpgsqlParameter("@jumlahDikurangi", jumlahDikurangi)
+            };
+
+            queryExecutor(query, parameters);
+        }
     }
 }

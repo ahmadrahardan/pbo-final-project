@@ -89,7 +89,7 @@ namespace Tugas_Akhir_PBO.View.Mitra
                 Location = new Point(13, 7),
                 BackColor = Color.Transparent,
                 Image = Image.FromStream(new MemoryStream(katalog.Gambar)),
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.Zoom
             };
 
             Label stokLabel = new Label

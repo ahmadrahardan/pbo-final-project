@@ -18,11 +18,13 @@ namespace Tugas_Akhir_PBO.View.Admin
         UserControlTransaksi UCTransaksi;
         Label totalHargaLabel;
         Label kembaliLabel;
+        LandingPage FormParent;
 
-        public UCAddTransaksi(UserControlTransaksi UCTransaksi)
+        public UCAddTransaksi(UserControlTransaksi UCTransaksi, LandingPage FormParent)
         {
             InitializeComponent();
             this.UCTransaksi = UCTransaksi;
+            this.FormParent = FormParent;
             InitializeTotalHargaLabel();
             InitializeKembaliLabel();
         }
@@ -77,15 +79,23 @@ namespace Tugas_Akhir_PBO.View.Admin
                 };
 
                 TransaksiContext transaksiContext = new TransaksiContext();
+                KatalogContext katalogContext = new KatalogContext();
                 int idTransaksi = transaksiContext.AddTransaksi(transaksi);
 
+                List<(string NamaProduk, int Jumlah, decimal HargaSatuan)> produkDisewa = new List<(string, int, decimal)>();
                 foreach (Panel card in UCTransaksi.GetPanelTransaksi().Controls.OfType<Panel>())
                 {
                     Label jumlahLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(362, 88));
+                    Label hargaLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(145, 40));
+                    Label namaLabel = card.Controls.OfType<Label>().FirstOrDefault(l => l.Location == new Point(145, 78));
+
                     int jumlah = int.Parse(jumlahLabel.Text);
+                    decimal harga = decimal.Parse(hargaLabel.Text.Replace("Rp", "").Replace(".", ""));
+                    string namaProduk = namaLabel.Text;
 
-                    int idKatalog = (int)card.Tag;
+                    produkDisewa.Add((namaProduk, jumlah, harga));
 
+                    int idKatalog = (int)card.Tag; 
                     DetailTransaksi detail = new DetailTransaksi
                     {
                         id_transaksi = idTransaksi,
@@ -94,6 +104,7 @@ namespace Tugas_Akhir_PBO.View.Admin
                     };
 
                     transaksiContext.AddDetailTransaksi(detail);
+                    katalogContext.UpdateStokProduk(idKatalog, jumlah);
                 }
 
                 MessageBox.Show("Transaksi berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -101,7 +112,19 @@ namespace Tugas_Akhir_PBO.View.Admin
                 NamaBox.Text = string.Empty;
                 NIKBox.Text = string.Empty;
                 TanggalKembaliBox.Text = string.Empty;
-                UCTransaksi.ResetTransaksi();
+
+                UCTransaksi.ShowAddStruk();
+                UCTransaksi.addStruk.LoadProduk(produkDisewa);
+                UCTransaksi.addStruk.LoadTransaksi(transaksi);
+                UCTransaksi.ClearTransaksi();
+
+                UserControlStok ucStok = FormParent.Controls.OfType<UserControlStok>().FirstOrDefault();
+                if (ucStok != null)
+                {
+                    ucStok.LoadKatalog();
+                }
+
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -131,6 +154,12 @@ namespace Tugas_Akhir_PBO.View.Admin
             }
         }
 
+        public void UpdateTotalHarga(decimal totalHarga)
+        {
+            totalHargaLabel.Text = $"Rp{totalHarga:N0}";
+        }
+
+
         private void UpdateKembalian()
         {
             decimal bayar = 0;
@@ -151,6 +180,11 @@ namespace Tugas_Akhir_PBO.View.Admin
 
         private void CloseBox_Click(object sender, EventArgs e)
         {
+            NamaBox.Text = string.Empty;
+            NIKBox.Text = string.Empty;
+            TanggalKembaliBox.Text = string.Empty;
+            BayarBox.Text = string.Empty;
+            kembaliLabel.Text = "Rp0"; 
             this.Visible = false;
         }
 

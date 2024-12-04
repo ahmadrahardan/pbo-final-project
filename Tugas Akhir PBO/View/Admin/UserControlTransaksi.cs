@@ -20,14 +20,20 @@ namespace Tugas_Akhir_PBO.View
         FlowLayoutPanel panelKatalog;
         FlowLayoutPanel panelTransaksi;
         Label totalHargaLabel;
+        public UCAddStruk addStruk;
 
         public UserControlTransaksi(LandingPage FormParent)
         {
             InitializeComponent();
             this.FormParent = FormParent;
-            addTransaksi = new UCAddTransaksi(this);
+
+            addTransaksi = new UCAddTransaksi(this, FormParent);
             this.Controls.Add(addTransaksi);
             addTransaksi.Visible = false;
+
+            addStruk = new UCAddStruk(this);
+            this.Controls.Add(addStruk);
+            addStruk.Visible = false;
 
             InitializePanelKatalog();
             InitializePanelTransaksi();
@@ -131,7 +137,7 @@ namespace Tugas_Akhir_PBO.View
                 Location = new Point(13, 7),
                 BackColor = Color.Transparent,
                 Image = Image.FromStream(new MemoryStream(katalog.Gambar)),
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.Zoom
             };
 
             PictureBox plusBox = new PictureBox
@@ -178,7 +184,7 @@ namespace Tugas_Akhir_PBO.View
             Label namaLabel = new Label
             {
                 Text = katalog.NamaProduk,
-                Font = new Font("Poppins", 14, FontStyle.Bold),
+                Font = new Font("Poppins", 10, FontStyle.Bold),
                 BackColor = Color.Transparent,
                 ForeColor = Color.Gold,
                 Location = new Point(145, 78),
@@ -201,7 +207,7 @@ namespace Tugas_Akhir_PBO.View
                 Location = new Point(15, 16),
                 BackColor = Color.Transparent,
                 Image = Image.FromStream(new MemoryStream(katalog.Gambar)),
-                SizeMode = PictureBoxSizeMode.StretchImage
+                SizeMode = PictureBoxSizeMode.Zoom
             };
 
             PictureBox deleteBox = new PictureBox
@@ -321,8 +327,15 @@ namespace Tugas_Akhir_PBO.View
 
         public void ShowAddTransaksi()
         {
+            addTransaksi.UpdateTotalHarga(this.TotalHarga);
             addTransaksi.Visible = true;
             addTransaksi.BringToFront();
+        }
+
+        public void ShowAddStruk()
+        {
+            addStruk.Visible = true;
+            addStruk.BringToFront();
         }
 
         private void btnAddTransaksi_Click(object sender, EventArgs e)
@@ -364,6 +377,14 @@ namespace Tugas_Akhir_PBO.View
                 FormParent.ShowLogin();
             }
         }
+
+        public void ClearTransaksi()
+        {
+            panelTransaksi.Controls.Clear();
+
+            totalHargaLabel.Text = "Rp0";
+        }
+
 
         private void UserControlTransakasi_Load(object sender, EventArgs e)
         {

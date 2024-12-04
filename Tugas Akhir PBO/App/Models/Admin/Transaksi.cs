@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tugas_Akhir_PBO.App.Models.Admin
 {
-    internal class Transaksi
+    public class Transaksi
     {
         public int id_transaksi { get; set; }
         public string Nama { get; set; }

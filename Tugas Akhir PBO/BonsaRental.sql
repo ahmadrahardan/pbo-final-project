@@ -20,6 +20,24 @@ CREATE TABLE Admin (
     password VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE Transaksi (
+    id_transaksi SERIAL PRIMARY KEY, 
+    nama VARCHAR(100) NOT NULL,      
+    nik VARCHAR(20) NOT NULL,        
+    total_harga NUMERIC(15, 2) NOT NULL, 
+    tanggal_kembali DATE NOT NULL,   
+    tanggal_transaksi TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+);
+
+CREATE TABLE DetailTransaksi (
+    id_detail SERIAL PRIMARY KEY,  
+    id_transaksi INT NOT NULL,     
+    id_katalog INT NOT NULL,       
+    jumlah INT NOT NULL,           
+    FOREIGN KEY (id_transaksi) REFERENCES Transaksi(id_transaksi) ON DELETE CASCADE,
+    FOREIGN KEY (id_katalog) REFERENCES Katalog(id_katalog) ON DELETE CASCADE
+);
+
 CREATE TABLE Katalog_Mitra (
     id_katalog SERIAL PRIMARY KEY,
     nama_produk VARCHAR(100) NOT NULL,
@@ -56,3 +74,12 @@ from Admin
 
 select *
 from Mitra
+
+select *
+from Transaksi
+
+select *
+from DetailTransaksi
+
+DELETE FROM Transaksi
+WHERE id_transaksi = 10;
