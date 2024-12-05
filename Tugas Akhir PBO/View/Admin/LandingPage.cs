@@ -28,8 +28,8 @@ namespace Tugas_Akhir_PBO.View
             login = new UserControlLogin(this);
             register = new UserControlRegister(this);
             dashboard = new UserControlDashboard(this);
-            pengelolaanStok = new UserControlStok(this);
             transaksi = new UserControlTransaksi(this);
+            pengelolaanStok = new UserControlStok(this, transaksi);
             pengelolaanProduk = new UserControlKatalog(this, pengelolaanStok, transaksi);
             
 

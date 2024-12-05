@@ -95,11 +95,14 @@ namespace Tugas_Akhir_PBO.View
             KatalogContext katalogContext = new KatalogContext();
             List<Katalog> katalogList = katalogContext.GetAllKatalog();
 
-            foreach (var katalog in katalogList)
+            var availableKatalogList = katalogList.Where(k => k.Stok > 0).ToList();
+
+            foreach (var katalog in availableKatalogList)
             {
                 AddKatalogCard(katalog);
             }
         }
+
 
         private void AddKatalogCard(Katalog katalog)
         {

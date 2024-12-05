@@ -16,10 +16,12 @@ namespace Tugas_Akhir_PBO.View
     {
         LandingPage FormParent;
         FlowLayoutPanel panelKatalog;
-        public UserControlStok(LandingPage FormParent)
+        UserControlTransaksi UCTransaksi;
+        public UserControlStok(LandingPage FormParent, UserControlTransaksi UCTransaksi)
         {
             InitializeComponent();
             this.FormParent = FormParent;
+            this.UCTransaksi = UCTransaksi;
 
             InitializePanelKatalog();
             LoadKatalog();
@@ -117,7 +119,8 @@ namespace Tugas_Akhir_PBO.View
 
                 try
                 {
-                    StokContext.UpdateStok(katalog.id_katalog, katalog.Stok); 
+                    StokContext.UpdateStok(katalog.id_katalog, katalog.Stok);
+                    UCTransaksi.LoadKatalog();
                 }
                 catch (Exception ex)
                 {
@@ -142,7 +145,8 @@ namespace Tugas_Akhir_PBO.View
 
                     try
                     {
-                        StokContext.UpdateStok(katalog.id_katalog, katalog.Stok); 
+                        StokContext.UpdateStok(katalog.id_katalog, katalog.Stok);
+                        UCTransaksi.LoadKatalog();
                     }
                     catch (Exception ex)
                     {
