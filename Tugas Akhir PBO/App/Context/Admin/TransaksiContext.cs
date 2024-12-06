@@ -39,5 +39,30 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
             commandExecutor(query, parameters);
         }
+
+        public int GetTotalHargaSum()
+        {
+            string query = "SELECT SUM (total_harga) FROM transaksi";
+
+            DataTable result = Database.queryExecutor(query);
+            return Convert.ToInt32(result.Rows[0][0]);
+        }
+
+        public int GetJumlahBarangDisewa()
+        {
+            string query = @"SELECT 
+                SUM(dt.jumlah) AS total_barang_disewa
+            FROM 
+                detailtransaksi dt
+            JOIN 
+                transaksi t ON dt.id_transaksi = t.id_transaksi
+            WHERE 
+                t.tanggal_kembali > CURRENT_DATE";
+
+            DataTable result = Database.queryExecutor(query);
+            return result.Rows.Count > 0 && !DBNull.Value.Equals(result.Rows[0][0])
+                ? Convert.ToInt32(result.Rows[0][0])
+                : 0;
+        }
     }
 }

@@ -90,5 +90,13 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
             queryExecutor(query, parameters);
         }
+
+        public int GetTotalKatalogCount()
+        {
+            string query = "SELECT COUNT (id_katalog) FROM katalog";
+
+            DataTable result = Database.queryExecutor(query);
+            return Convert.ToInt32(result.Rows[0][0]);
+        }
     }
 }
