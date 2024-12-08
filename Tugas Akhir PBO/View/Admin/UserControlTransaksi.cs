@@ -20,14 +20,16 @@ namespace Tugas_Akhir_PBO.View
         FlowLayoutPanel panelKatalog;
         FlowLayoutPanel panelTransaksi;
         Label totalHargaLabel;
+        UserControlDashboard dashboardControl;
         public UCAddStruk addStruk;
 
-        public UserControlTransaksi(LandingPage FormParent)
+        public UserControlTransaksi(LandingPage FormParent, UserControlDashboard dashboardControl)
         {
             InitializeComponent();
             this.FormParent = FormParent;
+            this.dashboardControl = dashboardControl;
 
-            addTransaksi = new UCAddTransaksi(this, FormParent);
+            addTransaksi = new UCAddTransaksi(this, FormParent, dashboardControl);
             this.Controls.Add(addTransaksi);
             addTransaksi.Visible = false;
 

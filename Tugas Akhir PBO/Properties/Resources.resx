@@ -130,14 +130,14 @@
   <data name="Button_KT_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_KT_Idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Button_Edit Katalog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_Edit Katalog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Pannel Regist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pannel Regist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Panel Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Panel Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Buttton_Selesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Buttton_Selesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Panel Login Baru" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Panel Login Baru.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,14 @@
   <data name="Button_Logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_Logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Buttton_Selesai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Buttton_Selesai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dashboard No Panel (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard No Panel (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Button_Edit Katalog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Button_Edit Katalog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Group 427319854" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Group 427319854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Form_Struk (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Form_Struk (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,7 +262,7 @@
   <data name="Button_TR_OnClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Button_TR_OnClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Group 427319854" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Group 427319854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dashboard No Panel (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dashboard No Panel (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -19,12 +19,14 @@ namespace Tugas_Akhir_PBO.View.Admin
         Label totalHargaLabel;
         Label kembaliLabel;
         LandingPage FormParent;
+        UserControlDashboard UCDashboard;
 
-        public UCAddTransaksi(UserControlTransaksi UCTransaksi, LandingPage FormParent)
+        public UCAddTransaksi(UserControlTransaksi UCTransaksi, LandingPage FormParent, UserControlDashboard UCDashboard)
         {
             InitializeComponent();
             this.UCTransaksi = UCTransaksi;
             this.FormParent = FormParent;
+            this.UCDashboard = UCDashboard;
             InitializeTotalHargaLabel();
             InitializeKembaliLabel();
         }
@@ -75,7 +77,8 @@ namespace Tugas_Akhir_PBO.View.Admin
                     NIK = NIKBox.Text,
                     TotalHarga = UCTransaksi.TotalHarga,
                     TanggalKembali = DateTime.Parse(TanggalKembaliBox.Text),
-                    TanggalTransaksi = DateTime.Now
+                    TanggalTransaksi = DateTime.Now,
+                    Status = "Disewa"
                 };
 
                 TransaksiContext transaksiContext = new TransaksiContext();
@@ -117,6 +120,9 @@ namespace Tugas_Akhir_PBO.View.Admin
                 UCTransaksi.addStruk.LoadProduk(produkDisewa);
                 UCTransaksi.addStruk.LoadTransaksi(transaksi);
                 UCTransaksi.ClearTransaksi();
+                UCDashboard.LoadTotalProdukDisewa();
+                UCDashboard.LoadTotalPenghasilan();
+                UCDashboard.LoadRiwayat();
 
                 UserControlStok ucStok = FormParent.Controls.OfType<UserControlStok>().FirstOrDefault();
                 if (ucStok != null)

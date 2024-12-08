@@ -18,14 +18,16 @@ namespace Tugas_Akhir_PBO.View
         UCAddProduk addProduk;
         UserControlStok stokControl;
         UserControlTransaksi transaksiControl;
+        UserControlDashboard dashboardControl;
 
         FlowLayoutPanel panelKatalog;
-        public UserControlKatalog(LandingPage FormParent, UserControlStok stokControl, UserControlTransaksi transaksiControl)
+        public UserControlKatalog(LandingPage FormParent, UserControlStok stokControl, UserControlTransaksi transaksiControl, UserControlDashboard dashboardControl)
         {
             InitializeComponent();
             this.stokControl = stokControl;
             this.transaksiControl = transaksiControl;
-            addProduk = new UCAddProduk(this, stokControl, transaksiControl);
+            this.dashboardControl = dashboardControl;
+            addProduk = new UCAddProduk(this, stokControl, transaksiControl, dashboardControl);
             this.Controls.Add(addProduk);
             addProduk.Visible = false;
             this.FormParent = FormParent;

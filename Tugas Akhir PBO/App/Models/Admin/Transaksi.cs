@@ -14,5 +14,6 @@ namespace Tugas_Akhir_PBO.App.Models.Admin
         public decimal TotalHarga { get; set; }
         public DateTime TanggalKembali { get; set; }
         public DateTime TanggalTransaksi { get; set; }
+        public string Status { get; set; }
     }
 }

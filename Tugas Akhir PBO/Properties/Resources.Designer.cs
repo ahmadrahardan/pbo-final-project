@@ -303,6 +303,26 @@ namespace Tugas_Akhir_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dashboard_No_Panel__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Dashboard No Panel (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dashboard_No_Panel__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Dashboard No Panel (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Form_Struk {
             get {
                 object obj = ResourceManager.GetObject("Form_Struk", resourceCulture);

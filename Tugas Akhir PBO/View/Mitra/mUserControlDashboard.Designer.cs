@@ -85,7 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Dashboard_No_Panel__1_;
+            BackgroundImage = Properties.Resources.Dashboard_No_Panel__3_;
             Controls.Add(pictureBox1);
             Controls.Add(KatalogBox);
             Controls.Add(StokBox);

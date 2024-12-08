@@ -26,7 +26,8 @@ CREATE TABLE Transaksi (
     nik VARCHAR(20) NOT NULL,        
     total_harga NUMERIC(15, 2) NOT NULL, 
     tanggal_kembali DATE NOT NULL,   
-    tanggal_transaksi TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP 
+    tanggal_transaksi TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    status VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE DetailTransaksi (
