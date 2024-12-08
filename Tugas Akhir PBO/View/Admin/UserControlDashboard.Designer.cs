@@ -33,11 +33,13 @@
             StokBox = new PictureBox();
             KatalogBox = new PictureBox();
             TransaksiBox = new PictureBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)LogoutBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DashboardBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)StokBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)KatalogBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TransaksiBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // LogoutBox
@@ -94,11 +96,23 @@
             TransaksiBox.TabStop = false;
             TransaksiBox.Click += btnTransaksi_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources.Lihat_Selengkapnya__1_;
+            pictureBox1.Location = new Point(1149, 965);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(105, 14);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += btnAddRiwayat_Click;
+            // 
             // UserControlDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Dashboard_No_Panel__2_;
+            Controls.Add(pictureBox1);
             Controls.Add(TransaksiBox);
             Controls.Add(KatalogBox);
             Controls.Add(StokBox);
@@ -112,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)StokBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)KatalogBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)TransaksiBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -122,5 +137,6 @@
         private PictureBox StokBox;
         private PictureBox KatalogBox;
         private PictureBox TransaksiBox;
+        private PictureBox pictureBox1;
     }
 }

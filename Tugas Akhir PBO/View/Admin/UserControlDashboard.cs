@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tugas_Akhir_PBO.App.Context.Admin;
 using Tugas_Akhir_PBO.App.Models.Admin;
+using Tugas_Akhir_PBO.View.Admin;
 
 namespace Tugas_Akhir_PBO.View
 {
     public partial class UserControlDashboard : UserControl
     {
         LandingPage FormParent;
+        UCAddRiwayat addRiwayat;
         UserControlLogin login;
         Label totalProdukLabel;
         Label totalProdukDisewaLabel;
@@ -25,6 +27,10 @@ namespace Tugas_Akhir_PBO.View
         {
             InitializeComponent();
             this.FormParent = FormParent;
+
+            addRiwayat = new UCAddRiwayat(this);
+            this.Controls.Add(addRiwayat);
+            addRiwayat.Visible = false;
 
             InitializeTotalProdukLabel();
             InitializeTotalProdukDisewaLabel();
@@ -182,7 +188,7 @@ namespace Tugas_Akhir_PBO.View
         {
             Panel card = new Panel
             {
-                Size = new Size(1294, 66), 
+                Size = new Size(1294, 60), 
                 BackColor = Color.Transparent,
                 BorderStyle = BorderStyle.None,
                 Margin = new Padding(5)
@@ -245,6 +251,17 @@ namespace Tugas_Akhir_PBO.View
             card.Controls.Add(statusLabel);
 
             panelStruk.Controls.Add(card);
+        }
+
+        private void btnAddRiwayat_Click(object sender, EventArgs e)
+        {
+            ShowAddRiwayat();
+        }
+
+        public void ShowAddRiwayat()
+        {
+            addRiwayat.Visible = true;
+            addRiwayat.BringToFront();
         }
 
         private void btnPengelolaanStok_Click(object sender, EventArgs e)
