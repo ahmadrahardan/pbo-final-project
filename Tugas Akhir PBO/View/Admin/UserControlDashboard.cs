@@ -16,19 +16,21 @@ namespace Tugas_Akhir_PBO.View
     public partial class UserControlDashboard : UserControl
     {
         LandingPage FormParent;
-        UCAddRiwayat addRiwayat;
+        public UCAddRiwayat addRiwayat;
         UserControlLogin login;
+        UserControlStok stokControl;
         Label totalProdukLabel;
         Label totalProdukDisewaLabel;
         Label totalPenghasilanLabel;
         FlowLayoutPanel panelStruk;
 
-        public UserControlDashboard(LandingPage FormParent)
+        public UserControlDashboard(LandingPage FormParent, UserControlStok stokControl)
         {
             InitializeComponent();
             this.FormParent = FormParent;
+            this.stokControl = stokControl;
 
-            addRiwayat = new UCAddRiwayat(this);
+            addRiwayat = new UCAddRiwayat(this, stokControl);
             this.Controls.Add(addRiwayat);
             addRiwayat.Visible = false;
 
@@ -40,6 +42,11 @@ namespace Tugas_Akhir_PBO.View
             LoadTotalProdukDisewa();
             LoadTotalPenghasilan();
             LoadRiwayat();
+        }
+
+        public void SetStokControl(UserControlStok stokControl)
+        {
+            this.stokControl = stokControl;
         }
 
         private void InitializeTotalProdukLabel()

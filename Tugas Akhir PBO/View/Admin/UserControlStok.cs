@@ -17,15 +17,20 @@ namespace Tugas_Akhir_PBO.View
         LandingPage FormParent;
         FlowLayoutPanel panelKatalog;
         UserControlTransaksi UCTransaksi;
-        public UserControlStok(LandingPage FormParent, UserControlTransaksi UCTransaksi)
+        public UserControlStok(LandingPage FormParent)
         {
             InitializeComponent();
             this.FormParent = FormParent;
-            this.UCTransaksi = UCTransaksi;
 
             InitializePanelKatalog();
             LoadKatalog();
         }
+
+        public void InitializeTransaksi(UserControlTransaksi transaksi)
+        {
+            this.UCTransaksi = transaksi;
+        }
+
 
         private void InitializePanelKatalog()
         {

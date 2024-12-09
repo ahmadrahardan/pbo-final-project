@@ -123,6 +123,7 @@ namespace Tugas_Akhir_PBO.View.Admin
                 UCDashboard.LoadTotalProdukDisewa();
                 UCDashboard.LoadTotalPenghasilan();
                 UCDashboard.LoadRiwayat();
+                UCDashboard.addRiwayat.LoadRiwayatTransaksi();
 
                 UserControlStok ucStok = FormParent.Controls.OfType<UserControlStok>().FirstOrDefault();
                 if (ucStok != null)

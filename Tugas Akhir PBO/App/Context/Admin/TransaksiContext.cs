@@ -64,5 +64,35 @@ namespace Tugas_Akhir_PBO.App.Context.Admin
 
             commandExecutor(query, parameters);
         }
+
+        public void UpdateStokProduk(int idTransaksi)
+        {
+            string getDetailsQuery = "SELECT id_katalog, jumlah FROM DetailTransaksi WHERE id_transaksi = @id_transaksi";
+
+            NpgsqlParameter[] getDetailsParams = {new NpgsqlParameter("@id_transaksi", idTransaksi)};
+
+            DataTable detailDataTable = queryExecutor(getDetailsQuery, getDetailsParams);
+
+            foreach (DataRow row in detailDataTable.Rows)
+            {
+                int idKatalog = Convert.ToInt32(row["id_katalog"]);
+                int jumlah = Convert.ToInt32(row["jumlah"]);
+
+                string updateStockQuery = "UPDATE Katalog SET stok = stok + @jumlah WHERE id_katalog = @id_katalog";
+
+                NpgsqlParameter[] updateStockParams = {new NpgsqlParameter("@jumlah", jumlah),new NpgsqlParameter("@id_katalog", idKatalog)};
+
+                commandExecutor(updateStockQuery, updateStockParams);
+            }
+        }
+
+        public void UpdateStatusToSelesai(int idTransaksi)
+        {
+            string query = "UPDATE Transaksi SET status = @status WHERE id_transaksi = @id_transaksi";
+
+            NpgsqlParameter[] parameters = {new NpgsqlParameter("@status", "Selesai"),new NpgsqlParameter("@id_transaksi", idTransaksi)};
+
+            commandExecutor(query, parameters);
+        }
     }
 }

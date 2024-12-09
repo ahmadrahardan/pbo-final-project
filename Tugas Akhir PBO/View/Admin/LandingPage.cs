@@ -27,9 +27,11 @@ namespace Tugas_Akhir_PBO.View
             splashScreen = new UserControlSplashScreen();
             login = new UserControlLogin(this);
             register = new UserControlRegister(this);
-            dashboard = new UserControlDashboard(this);
+            pengelolaanStok = new UserControlStok(this);
+            dashboard = new UserControlDashboard(this, pengelolaanStok);
             transaksi = new UserControlTransaksi(this, dashboard);
-            pengelolaanStok = new UserControlStok(this, transaksi);
+            pengelolaanStok.InitializeTransaksi(transaksi);
+
             pengelolaanProduk = new UserControlKatalog(this, pengelolaanStok, transaksi, dashboard);
             
 
