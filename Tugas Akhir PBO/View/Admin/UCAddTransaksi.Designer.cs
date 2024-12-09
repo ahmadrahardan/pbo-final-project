@@ -78,6 +78,7 @@
             TanggalKembaliBox.Name = "TanggalKembaliBox";
             TanggalKembaliBox.Size = new Size(380, 23);
             TanggalKembaliBox.TabIndex = 5;
+            TanggalKembaliBox.TextChanged += TanggalKembaliBox_TextChanged;
             // 
             // NIKBox
             // 

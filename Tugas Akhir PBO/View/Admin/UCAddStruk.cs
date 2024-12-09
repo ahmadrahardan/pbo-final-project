@@ -110,8 +110,8 @@ namespace Tugas_Akhir_PBO.View.Admin
 
         public void LoadTransaksi(Transaksi transaksi)
         {
-            tanggalTransaksi.Text = $"{transaksi.TanggalTransaksi:yyyy-MM-dd}";
-            tanggalKembali.Text = $"{transaksi.TanggalKembali:yyyy-MM-dd}";
+            tanggalTransaksi.Text = $"{transaksi.TanggalTransaksi:dd-MM-yyyy}";
+            tanggalKembali.Text = $"{transaksi.TanggalKembali:dd-MM-yyyy}";
             penyewa.Text = $"{transaksi.Nama}";
             totalHarga.Text = $"Rp{transaksi.TotalHarga:N0}";
         }

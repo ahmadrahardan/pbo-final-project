@@ -29,6 +29,7 @@ namespace Tugas_Akhir_PBO.View.Admin
             this.UCDashboard = UCDashboard;
             InitializeTotalHargaLabel();
             InitializeKembaliLabel();
+
         }
 
         private void InitializeTotalHargaLabel()
@@ -69,13 +70,20 @@ namespace Tugas_Akhir_PBO.View.Admin
                 return;
             }
 
+            DateTime tanggalKembali;
+            if (!DateTime.TryParse(TanggalKembaliBox.Text, out tanggalKembali) || (tanggalKembali.Date <= DateTime.Now.Date))
+            {
+                MessageBox.Show("Tanggal kembali harus valid dan lebih besar dari hari ini!","Peringatan",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 Transaksi transaksi = new Transaksi
                 {
                     Nama = NamaBox.Text,
                     NIK = NIKBox.Text,
-                    TotalHarga = UCTransaksi.TotalHarga,
+                    TotalHarga = DurationBasedTotalHarga,
                     TanggalKembali = DateTime.Parse(TanggalKembaliBox.Text),
                     TanggalTransaksi = DateTime.Now,
                     Status = "Disewa"
@@ -115,6 +123,7 @@ namespace Tugas_Akhir_PBO.View.Admin
                 NamaBox.Text = string.Empty;
                 NIKBox.Text = string.Empty;
                 TanggalKembaliBox.Text = string.Empty;
+                BayarBox.Text = string.Empty;
 
                 UCTransaksi.ShowAddStruk();
                 UCTransaksi.addStruk.LoadProduk(produkDisewa);
@@ -171,7 +180,7 @@ namespace Tugas_Akhir_PBO.View.Admin
         {
             decimal bayar = 0;
 
-            decimal totalHarga = UCTransaksi.TotalHarga;
+            decimal totalHarga = DurationBasedTotalHarga;
 
             if (decimal.TryParse(BayarBox.Text, out bayar))
             {
@@ -182,6 +191,65 @@ namespace Tugas_Akhir_PBO.View.Admin
             else
             {
                 kembaliLabel.Text = "Rp0";
+            }
+        }
+
+        private void TanggalKembaliBox_TextChanged(object sender, EventArgs e)
+        {
+            if (TanggalKembaliBox.Text.Length == 10)
+            {
+                DateTime tanggalKembali;
+
+                if (DateTime.TryParseExact(TanggalKembaliBox.Text, "dd-MM-yyyy",System.Globalization.CultureInfo.InvariantCulture,System.Globalization.DateTimeStyles.None, out tanggalKembali))
+                {
+                    if (tanggalKembali >= DateTime.Now.Date)
+                    {
+                        UpdateTotalHargaWithDuration(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tanggal kembali harus lebih besar atau sama dengan hari ini.","Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Format tanggal tidak valid. Gunakan format dd-MM-yyyy.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private decimal DurationBasedTotalHarga { get; set; }
+
+        private void TanggalKembaliBox_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTotalHargaWithDuration();
+        }
+
+        private void UpdateTotalHargaWithDuration()
+        {
+            DateTime tanggalKembali;
+            decimal totalHargaPerHari = UCTransaksi.TotalHarga;
+
+            if (DateTime.TryParseExact(TanggalKembaliBox.Text, "dd-MM-yyyy",System.Globalization.CultureInfo.InvariantCulture,System.Globalization.DateTimeStyles.None, out tanggalKembali))
+            {
+                TimeSpan durasi = tanggalKembali.Date - DateTime.Now.Date;
+
+                if (durasi.Days > 0)
+                {
+                    DurationBasedTotalHarga = totalHargaPerHari * durasi.Days;
+                    totalHargaLabel.Text = $"Rp{DurationBasedTotalHarga:N0}";
+                }
+                else
+                {
+                    DurationBasedTotalHarga = 0;
+                    totalHargaLabel.Text = "Rp0"; 
+                    MessageBox.Show("Tanggal kembali harus lebih besar dari tanggal hari ini!","Peringatan",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                DurationBasedTotalHarga = 0;
+                totalHargaLabel.Text = "Rp0"; 
             }
         }
 
